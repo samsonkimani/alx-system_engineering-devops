@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#printing all the contents in the current working directory
+
+for f in *;
+do
+	echo "$f"
+done
