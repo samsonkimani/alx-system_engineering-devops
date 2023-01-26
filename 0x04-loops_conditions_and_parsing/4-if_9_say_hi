@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
-#using while loop and if else statements
-
-i=1
-
-while [ $i -lt 11 ];
-do
-	if [ $i -eq 9 ]
-	then
+# Printing Best school until when 9 is reached we say hi
+i="0"
+while [ "$i" -lt 10 ]; do
+	if [ "$i" -eq 9 ]; then
 		echo "Hi"
-	else
-		echo "Best School"
-	fi	
+	fi
+	echo "Best School"
 	((i++))
 done
