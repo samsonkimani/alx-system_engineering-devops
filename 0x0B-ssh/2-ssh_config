@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# configurations for opensssh
+
+Host *
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication nio
