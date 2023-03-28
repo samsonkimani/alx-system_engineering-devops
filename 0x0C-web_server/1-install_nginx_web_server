@@ -23,4 +23,3 @@ sudo sh -c "echo 'server {
 
 # Restart nginx
 sudo service nginx restart
-
