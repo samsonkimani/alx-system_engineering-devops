@@ -1,13 +1,26 @@
-#!/usr/bin/env bash
-# installing nginx on the server
-sudo apt-get  update -y
+#!/bin/bash
+
+# Update package index
+sudo apt-get update
+
+# Install nginx
 sudo apt-get install nginx -y
 
-# allowing nginx on firewall
-ufw allow 'Nginx HTTP'
+# Configure nginx
+sudo sh -c "echo 'server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
-# Creating new index
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+        root /var/www/html;
+        index index.html;
 
-# Starting nginx
-sudo service nginx start
+        server_name _;
+
+        location / {
+                return 200 \"Hello World!\";
+        }
+}' > /etc/nginx/sites-available/default"
+
+# Restart nginx
+sudo /etc/init.d/nginx restart
+
