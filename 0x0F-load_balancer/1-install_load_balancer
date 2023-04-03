@@ -13,8 +13,8 @@ frontend samson-frontend
 
 backend samson-backend
         balance roundrobin
-        server web-01 54.160.100.61:80 check
-        server web-02 100.25.152.160:80 check
+        server 122481-web-01 54.160.100.61:80 check
+        server 122481-web-02 100.25.152.160:80 check
 "
 echo "$server_config" |sudo tee -a /etc/haproxy/haproxy.cfg
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
