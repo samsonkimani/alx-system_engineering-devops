@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# installing a load balancer
+
+sudo apt-get install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.6
+sudo apt-get install haproxy=2.6.\*
+echo "
+frontend samson-frontend
+        bind *:80
+        mode http
+        default_backend samson-backend
+
+backend samson-backend
+        balance roundrobin
+        server web-01 54.160.100.61:80 check
+        server web-02 100.25.152.160:80 check
+" >> sudo /etc/haproxy/haproxy.cfg
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+sudo service haproxy restart
