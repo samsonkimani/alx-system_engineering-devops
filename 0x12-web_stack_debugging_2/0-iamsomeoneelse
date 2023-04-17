@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#running softwares as another user
+
+if [ $# -eq 0 ];
+then
+	sudo whoami
+	exit 1
+fi
+
+sudo -u "$1" whoami
