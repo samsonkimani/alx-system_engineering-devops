@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#installing ufw and allowing ports 22, 80 and 443
+
+sudo apt-get update
+sudo apt-get install ufw
+sudo ufw default deny incoming
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw enable
