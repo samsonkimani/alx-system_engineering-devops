@@ -7,7 +7,7 @@ if __name__ == "__main__":
     """ url for the rest api """
     base_url = 'https://jsonplaceholder.typicode.com'
     employee_url = '{}/users/{}'.format(base_url, argv[1])
-    todo_url = '{}/todos/?userId=2'.format(base_url)
+    todo_url = '{}/todos/?userId={}'.format(base_url, argv[1])
 
     """ employee response"""
     employee_res = requests.get(employee_url)
