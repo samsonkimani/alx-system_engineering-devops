@@ -3,7 +3,7 @@
 import requests
 from sys import argv
 
-if __name__ == "__main__":
+def main():
     """ url for the rest api """
     base_url = 'https://jsonplaceholder.typicode.com'
     employee_url = '{}/users/{}'.format(base_url, argv[1])
@@ -23,3 +23,6 @@ if __name__ == "__main__":
     for task in todo_data:
         if task['completed']:
             print('\t {}'.format(task['title']))
+
+if __name__ == '__main__':
+    main()
