@@ -22,4 +22,4 @@ if __name__ == "__main__":
         employee_data['name'], tasks_completed, len(todo_data)))
     for task in todo_data:
         if task['completed']:
-            print('\t{}'.format(task['title']))
+            print('\t {}'.format(task['title']))
