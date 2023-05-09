@@ -3,6 +3,7 @@
 
 import requests
 
+
 def number_of_subscribers(subreddit):
     """ a function to get the number of subscribers of a subreddit"""
     headers = {"User-Agent": 'my_bot/0.0.1'}
